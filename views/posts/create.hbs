@@ -1,0 +1,33 @@
+{{!-- views/posts/create.hbs --}}
+<h2>Crear una nueva publicación</h2>
+
+<form action="/posts/create" method="POST">
+
+    <label>Título</label>    
+    <input 
+        type="text"
+        name="title"
+    />
+
+
+    <label>Contenido</label>
+    <textarea 
+        type="text" 
+        name="content"
+    ></textarea>
+    
+    <label for="author-select">
+        <select name="author">
+            <option disable selected value=""></option>
+            {{#each dbUsers }}
+                <option value="{{this._id}}">{{this.username}}</option>
+            {{/each}}
+        </select>
+
+
+    </label>
+
+    <button type="submit">Crear la publicación</button>
+
+
+</form>

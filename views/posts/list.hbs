@@ -1,0 +1,13 @@
+{{!-- views/posts/list.hbs --}}
+<h1>Lista de publicaciones</h1>
+
+<div>
+    <ul>
+    {{#each posts}}
+        {{ this.title }} por {{ this.author.username }}
+        <hr />
+    {{/each}}
+
+    </ul>
+
+</div>
